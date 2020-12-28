@@ -100,7 +100,7 @@ environments:
         dataSource:
             dbCreate: update
             driverClassName: com.mysql.jdbc.Driver
-            url: jdbc:mysql://192.168.75.52:3306/grails_hello?useSSL=false
+            url: jdbc:mysql://192.168.75.52:3306/grails_hello?useSSL=false&characterEncoding=utf8
             username: root
             password: '123456'
-            formatSql:
+            formatSql: true

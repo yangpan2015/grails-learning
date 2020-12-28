@@ -5,20 +5,25 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
+        classpath "org.grails.plugins:hibernate5:${gormVersion - ".RELEASE"}"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.15.1"
+
+        //返回json view 需要的gradle
+        classpath "org.grails.plugins:views-gradle:1.1.6"
     }
 }
 
 version "0.1"
 group "grails.hello.world"
 
-apply plugin:"eclipse"
-apply plugin:"idea"
-apply plugin:"war"
-apply plugin:"org.grails.grails-web"
-apply plugin:"asset-pipeline"
-apply plugin:"org.grails.grails-gsp"
+apply plugin: "eclipse"
+apply plugin: "idea"
+apply plugin: "war"
+apply plugin: "org.grails.grails-web"
+apply plugin: "asset-pipeline"
+apply plugin: "org.grails.grails-gsp"
+// 返回 json view
+apply plugin: "org.grails.plugins.views-json"
 
 repositories {
     mavenLocal()
@@ -60,6 +65,12 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
+
+    // 返回json view
+    compile "org.grails.plugins:views-json"
+    compile "org.grails.plugins:views-json-templates"
+
+    compile "cn.hutool:hutool-all:5.4.3"
 }
 
 bootRun {

@@ -1,0 +1,12 @@
+import cn.hutool.core.util.IdUtil
+import grails.helloword.rest.ApiRespCode
+import grails.helloword.rest.CommonApiRespCode
+model {
+    ApiRespCode apiRespCode = CommonApiRespCode.OK
+}
+
+json {
+    status apiRespCode.code.toString().padLeft(3, '0')
+    code 200
+    nonce IdUtil.fastUUID()
+}

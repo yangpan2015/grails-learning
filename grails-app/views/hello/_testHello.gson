@@ -1,0 +1,6 @@
+import grails.hello.world.User
+
+model{
+    User user
+}
+json g.render(user)

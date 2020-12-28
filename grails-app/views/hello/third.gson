@@ -1,0 +1,9 @@
+import grails.hello.world.User
+
+inherits template:"/common/app"
+model{
+    User user
+}
+json{
+    data g.render(user)
+}
