@@ -95,6 +95,7 @@ dataSource:
     driverClassName: org.h2.Driver
     username: sa
     password: ''
+
 environments:
     development:
         dataSource:
@@ -103,4 +104,17 @@ environments:
             url: jdbc:mysql://192.168.75.52:3306/grails_hello?useSSL=false&characterEncoding=utf8
             username: root
             password: '123456'
+            logSql: true
             formatSql: true
+    qa:
+        dataSource:
+            dbCreate: update
+            driverClassName: com.mysql.jdbc.Driver
+            url: jdbc:mysql://192.168.75.52:3306/grails_hello?useSSL=false&characterEncoding=utf8
+            username: root
+            password: '1234561'
+            logSql: true
+            formatSql: true
+
+server:
+    port: 9010

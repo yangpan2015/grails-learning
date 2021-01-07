@@ -71,6 +71,7 @@ dependencies {
     compile "org.grails.plugins:views-json-templates"
 
     compile "cn.hutool:hutool-all:5.4.3"
+    compile 'com.alibaba:fastjson:1.2.74'
 }
 
 bootRun {

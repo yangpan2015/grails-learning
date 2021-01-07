@@ -19,7 +19,28 @@ class HelloController {
     }
 
     def third() {
-        def u = new User(name: 'dddaaaa', age: 100, lastVisit: new Date())
+        def u = new User(name: 'dddaaaa', age: 101, lastVisit: new Date())
+        u.save()
         render view: 'third', model: [user: u]
+    }
+
+    /**
+     * 测试enum
+     *
+     * @return
+     */
+    def fourth() {
+        def u = new User(name: 'dddaaaa', age: 101, info: User.INFO.B, lastVisit: new Date())
+        u.save()
+        render view: 'third', model: [user: u]
+    }
+
+    /**
+     * 测试 find max，这个接口有问题
+     *
+     * @return
+     */
+    def testFindMax() {
+        return User.executeQuery('from user limit 1') as JSON
     }
 }
